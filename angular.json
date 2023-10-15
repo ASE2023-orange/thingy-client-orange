@@ -63,7 +63,8 @@
               "browserTarget": "thingy-client-orange:build:production"
             },
             "development": {
-              "browserTarget": "thingy-client-orange:build:development"
+              "browserTarget": "thingy-client-orange:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
