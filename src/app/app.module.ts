@@ -5,6 +5,7 @@ import { KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService } fro
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -30,7 +31,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RealtimeDataComponent
   ],
   imports: [
     BrowserModule,

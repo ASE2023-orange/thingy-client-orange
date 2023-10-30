@@ -20,16 +20,6 @@ export class AppComponent implements OnInit{
   }
 
   fetchMessageFromAPI() {
-    // this.http.get<any>('http://localhost:8080/test')
-    //   .subscribe(
-    //     (response) => {
-    //       // Assuming the API response has a "message" property
-    //       this.message = response.message;
-    //     },
-    //     (error) => {
-    //       console.error('Error fetching data:', error);
-    //     }
-    //   );
     return this.http.get('/api/test', {responseType:'json'})
       .subscribe((data: any) => {
         console.log(data['message'])
