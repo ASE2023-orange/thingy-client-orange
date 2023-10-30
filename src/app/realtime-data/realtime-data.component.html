@@ -1,8 +1,5 @@
 <div >
-    <p>{{ thingyData }}</p>
-    <p>{{ success }}</p>
-    <p> air pressure: {{ airPressure }}</p>
-    <!-- <p> humidity: {{ thingyData.humidity }}</p>
-    <p> light: {{ thingyData.light }}</p> -->
-
+    <p *ngIf="pressure"> air pressure: {{ pressure }}</p>
+    <p *ngIf="humidity"> humidity: {{ humidity }}</p>
+    <p *ngIf="light"> light: {{ light }}</p>
 </div>
