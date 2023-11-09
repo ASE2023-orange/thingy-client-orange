@@ -1,3 +1,6 @@
+// Created by: Jean-Marie Alder on 9 November 2023
+// Updated by: 
+
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 

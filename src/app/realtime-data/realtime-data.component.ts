@@ -1,3 +1,6 @@
+// Created by: Leyla Kandé on 9 November 2023
+// Updated by: 
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';

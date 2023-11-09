@@ -1,3 +1,6 @@
+// Created by: Jean-Marie Alder on 9 November 2023
+// Updated by: 
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
