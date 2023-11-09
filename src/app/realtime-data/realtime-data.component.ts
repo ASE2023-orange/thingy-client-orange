@@ -8,11 +8,8 @@ import { Subscription, interval, timer } from 'rxjs';
   styleUrls: ['./realtime-data.component.css']
 })
 export class RealtimeDataComponent implements OnInit, OnDestroy{
-  sensorData = new Map<string, string>()
-
-  pressure: any;
-  humidity: any;
-  light: any;
+  Object = Object;
+  thingyData: any;
 
   subscription: Subscription = new Subscription;
 
@@ -33,9 +30,10 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
   fetchThingyData() {
     return this.http.get('/api/thingy', {responseType:'json'})
     .subscribe((data: any) => {
-      this.pressure = data.pressure;
-      this.humidity = data.humidity;
-      this.light = data.light;
+      this.thingyData = JSON.parse(data);
+      // this.pressure = data.pressure;
+      // this.humidity = data.humidity;
+      // this.light = data.light;
       console.log("retrieve thingy data")
     });
   }

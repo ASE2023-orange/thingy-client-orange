@@ -1,5 +1,9 @@
-<div >
-    <p *ngIf="pressure"> air pressure: {{ pressure }}</p>
-    <p *ngIf="humidity"> humidity: {{ humidity }}</p>
-    <p *ngIf="light"> light: {{ light }}</p>
-</div>
+<h1>Sensor Data</h1>
+<tr *ngFor="let key of Object.keys(thingyData)">
+    <h3>ID: {{ key }}</h3>
+    <ul>
+        <li>Humidity: {{thingyData[key].humidity }}</li>
+        <li>Pressure: {{thingyData[key].pressure }}</li>
+        <li>Light: {{thingyData[key].light }}</li>
+    </ul>
+</tr>
