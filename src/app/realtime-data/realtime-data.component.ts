@@ -32,7 +32,8 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
   }
 
   fetchThingyData() {
-    return this.http.get('/api/thingy', {responseType:'json'})
+    const url = '/api/thingy/' + this.plantThingyID
+    return this.http.get(url, {responseType:'json'})
     .subscribe((data: any) => {
       this.thingyData = JSON.parse(data);
       console.log("retrieve thingy data")
