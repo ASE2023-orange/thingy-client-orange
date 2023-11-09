@@ -1,5 +1,5 @@
 // Created by: Leyla Kandé on 9 November 2023
-// Updated by: 
+// Updated by: LK on 9.11.2023
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -34,9 +34,6 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
     return this.http.get('/api/thingy', {responseType:'json'})
     .subscribe((data: any) => {
       this.thingyData = JSON.parse(data);
-      // this.pressure = data.pressure;
-      // this.humidity = data.humidity;
-      // this.light = data.light;
       console.log("retrieve thingy data")
     });
   }
