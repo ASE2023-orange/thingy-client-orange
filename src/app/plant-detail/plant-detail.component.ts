@@ -11,12 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlantDetailComponent implements OnInit{
 
+  thingyID: string = ""
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const plantID = this.route.paramMap.subscribe((params) => {
-      params.get('id')
-    })
+    this.route.paramMap.subscribe((params) => {
+      const plantID = params.get('id')
+
+      //thingy ID -> hard coded for dev. Replace when retrieve plant details from DB.
+      this.thingyID = "orange-"+plantID
+    })    
   }
 }
 

@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class PlantListComponent {
 
   plants = {
-    "morges": {id: 1, thingy: "orange-1"}, 
-    "fribourg": {id: 2, thingy: "orange-2"}
+    "Morges": {id: 1, thingy: "orange-1"}, 
+    "Fribourg": {id: 2, thingy: "orange-2"}
   };
 }

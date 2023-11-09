@@ -4,11 +4,10 @@
 -->
 
 <h1>Sensor Data</h1>
-<tr *ngFor="let key of Object.keys(thingyData)">
-    <h3>ID: {{ key }}</h3>
-    <ul>
-        <li>Humidity: {{thingyData[key].humidity }}</li>
-        <li>Pressure: {{thingyData[key].pressure }}</li>
-        <li>Light: {{thingyData[key].light }}</li>
-    </ul>
-</tr>
+
+<h3>ID: {{ plantThingyID }}</h3>
+<ul>
+    <li>Humidity: {{thingyData[plantThingyID].humidity }}</li>
+    <li>Pressure: {{thingyData[plantThingyID].pressure }}</li>
+    <li>Light: {{thingyData[plantThingyID].light }}</li>
+</ul>
