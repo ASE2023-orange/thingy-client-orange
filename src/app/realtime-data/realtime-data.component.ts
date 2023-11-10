@@ -1,8 +1,8 @@
 // Created by: Leyla Kandé on 9 November 2023
-// Updated by: 
+// Updated by: LK on 9.11.2023
 
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
 
 @Component({
@@ -11,6 +11,8 @@ import { Subscription, interval, timer } from 'rxjs';
   styleUrls: ['./realtime-data.component.css']
 })
 export class RealtimeDataComponent implements OnInit, OnDestroy{
+  @Input() plantThingyID!: string;
+
   Object = Object;
   thingyData: any;
 
@@ -19,7 +21,6 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    console.log("start");
     this.fetchThingyData();
     this.subscription = interval(3000).subscribe(() => {
       this.fetchThingyData();
@@ -31,12 +32,10 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
   }
 
   fetchThingyData() {
-    return this.http.get('/api/thingy', {responseType:'json'})
+    const url = '/api/thingy/' + this.plantThingyID
+    return this.http.get(url, {responseType:'json'})
     .subscribe((data: any) => {
       this.thingyData = JSON.parse(data);
-      // this.pressure = data.pressure;
-      // this.humidity = data.humidity;
-      // this.light = data.light;
       console.log("retrieve thingy data")
     });
   }

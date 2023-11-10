@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
+import { PlantListComponent } from './plant-list/plant-list.component';
+import { PlantDetailComponent } from './plant-detail/plant-detail.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -35,7 +37,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
 @NgModule({
   declarations: [
     AppComponent,
-    RealtimeDataComponent
+    RealtimeDataComponent,
+    PlantListComponent,
+    PlantDetailComponent
   ],
   imports: [
     BrowserModule,

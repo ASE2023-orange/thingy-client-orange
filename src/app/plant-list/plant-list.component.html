@@ -1,0 +1,11 @@
+<!-- 
+    Created by: Leyla Kandé on 9 November 2023
+    Updated by: Leyla Kandé on 9 November 2023
+-->
+
+<h1>Solar plant monitoring solution</h1>
+<ul>
+  <li *ngFor="let plant of plants | keyvalue">
+    <a [routerLink]="['/detail', plant.value.id]">{{ plant.key }}</a>
+  </li>
+</ul>
