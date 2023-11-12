@@ -14,7 +14,7 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
   @Input() plantThingyID!: string;
 
   Object = Object;
-  thingyData: any;
+  thingyData: any = {};
 
   subscription: Subscription = new Subscription;
 
@@ -35,7 +35,7 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
     const url = '/api/thingy/' + this.plantThingyID
     return this.http.get(url, {responseType:'json'})
     .subscribe((data: any) => {
-      this.thingyData = JSON.parse(data);
+      this.thingyData = data;
       console.log("retrieve thingy data")
     });
   }

@@ -7,7 +7,7 @@
 
 <h3>ID: {{ plantThingyID }}</h3>
 <ul>
-    <li>Humidity: {{thingyData[plantThingyID].humidity }}</li>
-    <li>Pressure: {{thingyData[plantThingyID].pressure }}</li>
-    <li>Light: {{thingyData[plantThingyID].light }}</li>
+    <li>Humidity: {{ thingyData[plantThingyID]?.humidity || '' }}</li>
+    <li>Pressure: {{ thingyData[plantThingyID]?.pressure || '' }}</li>
+    <li>Light: {{ thingyData[plantThingyID]?.light || '' }}</li>
 </ul>

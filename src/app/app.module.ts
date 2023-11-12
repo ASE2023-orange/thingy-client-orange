@@ -3,6 +3,7 @@
 
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService } from 'keycloak-angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
 import { PlantListComponent } from './plant-list/plant-list.component';
 import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { PlantAddComponent } from './plant-add/plant-add.component';
+import { PlantFormComponent } from './plant-components/plant-form/plant-form.component';
+import { PlantModifyComponent } from './plant-modify/plant-modify.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -39,13 +43,17 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppComponent,
     RealtimeDataComponent,
     PlantListComponent,
-    PlantDetailComponent
+    PlantDetailComponent,
+    PlantAddComponent,
+    PlantFormComponent,
+    PlantModifyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     KeycloakAngularModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

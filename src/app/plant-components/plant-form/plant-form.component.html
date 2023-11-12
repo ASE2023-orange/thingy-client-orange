@@ -1,0 +1,44 @@
+<!-- plant-form.component.html -->
+<form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="friendly_name">Friendly Name:</label>
+      <input type="text" id="friendly_name" formControlName="friendly_name" required>
+    </div>
+    <div>
+      <label for="locality">Locality:</label>
+      <input type="text" id="locality" formControlName="locality" required>
+    </div>
+    <div>
+      <label for="npa">NPA:</label>
+      <input type="text" id="npa" formControlName="npa" required>
+    </div>
+    <div>
+      <label for="lat">Latitude:</label>
+      <input type="number" id="lat" formControlName="lat" required>
+    </div>
+    <div>
+      <label for="lng">Longitude:</label>
+      <input type="number" id="lng" formControlName="lng" required>
+    </div>
+    <div>
+      <label for="max_power">Max Power:</label>
+      <input type="number" id="max_power" formControlName="max_power" required>
+    </div>
+    <div>
+      <label for="nr_panels">Number of Panels:</label>
+      <input type="number" id="nr_panels" formControlName="nr_panels" required>
+    </div>
+    <div>
+      <label for="contact_person">Contact Person:</label>
+      <select id="contact_person" formControlName="contact_person" required>
+        <option *ngFor="let user of users" 
+          [value]="user.id" [selected]="plantData.contact_person && user.id === plantData.contact_person.id">{{ user.first_name }} {{ user.last_name }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="thingy_id">Thingy ID:</label>
+      <input type="text" id="thingy_id" formControlName="thingy_id" required>
+    </div>
+    <button type="submit" [disabled]="plantForm.invalid">Submit</button>
+  </form>
+  

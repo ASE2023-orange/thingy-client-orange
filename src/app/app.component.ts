@@ -27,6 +27,6 @@ export class AppComponent implements OnInit{
       .subscribe((data: any) => {
         console.log(data['message'])
         this.message = data['message']
-      })
+      });
   }
 }
