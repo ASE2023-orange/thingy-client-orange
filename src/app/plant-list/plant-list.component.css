@@ -2,3 +2,8 @@
 Created by: Leyla Kandé on 9 November 2023
 Updated by:  
 */
+.add-button {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}

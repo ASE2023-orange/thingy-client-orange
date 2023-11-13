@@ -16,16 +16,17 @@ export class PlantFormComponent implements OnInit{
   plantData: any = {};
   plantForm!: FormGroup;
   users: any[] = [];
+  thingyIds: string[] = [];
 
   constructor(private fb: FormBuilder, private plantService: PlantService) {}
 
   ngOnInit(): void {
     this.initForm();
     this.initUsers();
+    this.initThingyIds();
 
     if(this.editMode){
       console.log("Edit mode.")
-      console.log(this.plantId)
       this.loadPlantData();
     }else{
       console.log("Add mode.")
@@ -61,6 +62,14 @@ export class PlantFormComponent implements OnInit{
     this.plantService.getUsers().subscribe(
       (users) => {
         this.users = users;
+      }
+    );
+  }
+  initThingyIds(): void {
+    // Fetch thingy ids from database
+    this.plantService.getThingyIds().subscribe(
+      (thingyIds) => {
+        this.thingyIds = thingyIds;
       }
     );
   }

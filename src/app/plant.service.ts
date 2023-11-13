@@ -24,13 +24,17 @@ export class PlantService {
   }
 
   getPlantById(plantId: string): Observable<any> {
-    const url = 'api/plants/' + plantId
-    return this.http.get(url)
+    const url = 'api/plants/' + plantId;
+    return this.http.get(url);
   }
 
   updatePlant(formData: any, plantId: string): Observable<any> {
-    console.log(formData)
     const url = 'api/plants/' + plantId;
     return this.http.patch(url, formData)
+  }
+
+  getThingyIds(): Observable<any> {
+    const url = 'api/thingy_id';
+    return this.http.get(url);
   }
 }
