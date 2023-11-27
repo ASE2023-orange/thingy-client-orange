@@ -1,5 +1,12 @@
-<div >
-    <p *ngIf="pressure"> air pressure: {{ pressure }}</p>
-    <p *ngIf="humidity"> humidity: {{ humidity }}</p>
-    <p *ngIf="light"> light: {{ light }}</p>
-</div>
+<!-- 
+    Created by: Leyla Kandé on 9 November 2023
+    Updated by: Leyla Kandé on 27 November 2023
+-->
+
+<h3>Sensor: {{ plantThingyID }}</h3>
+
+<ul>
+    <li>Humidity: {{ thingyData[plantThingyID]?.humidity || '' }}</li>
+    <li>Pressure: {{ thingyData[plantThingyID]?.pressure || '' }}</li>
+    <li>Light: {{ thingyData[plantThingyID]?.light || '' }}</li>
+</ul>

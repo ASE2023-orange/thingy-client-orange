@@ -1,11 +1,20 @@
+// Created by: Jean-Marie Alder on 9 November 2023
+// Updated by: 
+
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService } from 'keycloak-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
+import { PlantListComponent } from './plant-list/plant-list.component';
+import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { PlantAddComponent } from './plant-add/plant-add.component';
+import { PlantFormComponent } from './plant-components/plant-form/plant-form.component';
+import { PlantModifyComponent } from './plant-modify/plant-modify.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -16,7 +25,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8080/',
+        url: 'http://localhost:8888/',
         realm: 'thingy-orange',
         clientId: 'frontend'
       },
@@ -32,13 +41,19 @@ function initializeKeycloak(keycloak: KeycloakService) {
 @NgModule({
   declarations: [
     AppComponent,
-    RealtimeDataComponent
+    RealtimeDataComponent,
+    PlantListComponent,
+    PlantDetailComponent,
+    PlantAddComponent,
+    PlantFormComponent,
+    PlantModifyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     KeycloakAngularModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

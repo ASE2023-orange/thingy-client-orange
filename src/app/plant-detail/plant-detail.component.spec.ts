@@ -1,20 +1,19 @@
-
 // Created by: Leyla Kandé on 9 November 2023
 // Updated by: 
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RealtimeDataComponent } from './realtime-data.component';
+import { PlantDetailComponent } from './plant-detail.component';
 
-describe('RealtimeDataComponent', () => {
-  let component: RealtimeDataComponent;
-  let fixture: ComponentFixture<RealtimeDataComponent>;
+describe('PlantDetailComponent', () => {
+  let component: PlantDetailComponent;
+  let fixture: ComponentFixture<PlantDetailComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RealtimeDataComponent]
+      declarations: [PlantDetailComponent]
     });
-    fixture = TestBed.createComponent(RealtimeDataComponent);
+    fixture = TestBed.createComponent(PlantDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
