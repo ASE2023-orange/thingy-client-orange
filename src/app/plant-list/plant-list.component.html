@@ -1,13 +1,27 @@
 <!-- 
     Created by: Leyla Kandé on 9 November 2023
-    Updated by: Jean-Marie Alder on 13 November 2023
+    Updated by: LK on 27 November 2023
 -->
 
 <h1>Solar plant monitoring solution</h1>
-<ul>
-  <li *ngFor="let plant of plants | keyvalue">
-    <a [routerLink]="['/detail', plant.value.id]">{{ plant.key }}</a>
-  </li>
-</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Locality</th>
+      <th>Max Power</th>
+      <th># Panels</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plant of plantList">
+      <td (click)="navigateToDetail(plant.id)" style="cursor: pointer">{{ plant.friendly_name }}</td>
+      <td>{{ plant.locality }}</td>
+      <td>{{ plant.max_power }}</td>
+      <td>{{ plant.nr_panels }}</td>
+    </tr>
+  </tbody>
+</table>
 
 <button><a class="add-button" href="plant/add">Add Plant</a></button>

@@ -1,6 +1,7 @@
 // Created by: Leyla Kandé on 9 November 2023
-// Updated by: LK on 9.11.2023
+// Updated by: LK on 27.11.2023
 
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,17 +12,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlantDetailComponent implements OnInit{
 
-  thingyID: string = ""
+  plantID!: string | null;
+  plantData: any = {};
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      const plantID = params.get('id')
+      this.plantID = params.get('id')
+      this.fetchPlant();
+    }) 
+  }
 
-      //thingy ID -> hard coded for dev. Replace when retrieve plant details from DB.
-      this.thingyID = "orange-"+plantID
-    })    
+  fetchPlant() {
+    const url = '/api/plants/' + this.plantID;
+    return this.http.get(url, {responseType:'json'})
+    .subscribe((data: any) => {
+      this.plantData = data;
+      console.log("retrieve plant data")
+    });
   }
 }
 
