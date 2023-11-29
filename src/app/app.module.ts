@@ -15,6 +15,7 @@ import { PlantDetailComponent } from './plant-detail/plant-detail.component';
 import { PlantAddComponent } from './plant-add/plant-add.component';
 import { PlantFormComponent } from './plant-components/plant-form/plant-form.component';
 import { PlantModifyComponent } from './plant-modify/plant-modify.component';
+import { HistoricalDataComponent } from './historical-data/historical-data.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -46,7 +47,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     PlantDetailComponent,
     PlantAddComponent,
     PlantFormComponent,
-    PlantModifyComponent
+    PlantModifyComponent,
+    HistoricalDataComponent
   ],
   imports: [
     BrowserModule,
