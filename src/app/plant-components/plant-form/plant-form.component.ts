@@ -3,6 +3,8 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PlantService } from '../../plant.service';
 
 @Component({
@@ -18,7 +20,12 @@ export class PlantFormComponent implements OnInit{
   users: any[] = [];
   thingyIds: string[] = [];
 
-  constructor(private fb: FormBuilder, private plantService: PlantService) {}
+  constructor(
+    private fb: FormBuilder, 
+    private plantService: PlantService, 
+    private router: Router, 
+    private toastr: ToastrService
+    ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -74,6 +81,20 @@ export class PlantFormComponent implements OnInit{
     );
   }
 
+  deletePlant(){
+    this.plantService.deletePlantById(this.plantId).subscribe(
+      (message) => {
+        console.log(message);
+        this.toastr.success(
+          'Plant deleted successfully!', 
+          this.plantData.friendly_name, 
+          {closeButton: true, timeOut: 10000}
+          );
+        this.router.navigate(['/']);
+      }
+    );
+  }
+
   onSubmit(): void {
     if (this.plantForm && this.plantForm.valid) {
       const formData = this.plantForm.value;
@@ -85,7 +106,12 @@ export class PlantFormComponent implements OnInit{
         this.plantService.updatePlant(formData, this.plantId).subscribe(
           (response: any) => {
             console.log('Plant updated successfully:', response);
-            // Additional logic, e.g., redirect to another page
+            this.toastr.success(
+              'Plant updated successfully!', 
+              formData.friendly_name, 
+              {closeButton: true, timeOut: 10000}
+              );
+            this.router.navigate(['/']); //back to list
           }
         );
       }else{
@@ -93,7 +119,12 @@ export class PlantFormComponent implements OnInit{
         this.plantService.createPlant(formData).subscribe(
           (response: any) => {
             console.log('Plant created successfully:', response);
-            // Additional logic, e.g., redirect to another page
+            this.toastr.success(
+              'Plant added successfully!', 
+              formData.friendly_name, 
+              {closeButton: true, timeOut: 10000}
+              );
+            this.router.navigate(['/']); //back to list
           }
         );
       }

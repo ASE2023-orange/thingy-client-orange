@@ -35,4 +35,8 @@ form {
     background-color: #ccc;
     cursor: not-allowed;
   }
+
+  .delete-button {
+    background-color: red; 
+  }
   

@@ -1,4 +1,39 @@
 /* 
 Created by: Leyla Kandé on 9 November 2023
-Updated by:  
+Updated by:  JMA on 29 Nov 2023
 */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h3 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  li::before {
+    content: '\2022'; /* Use a bullet point as a list item marker */
+    color: #008CBA; /* Set bullet point color */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  /* Optional: Style the individual data points */
+  ul li span {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #00506b; /* Adjust color as needed */
+  }

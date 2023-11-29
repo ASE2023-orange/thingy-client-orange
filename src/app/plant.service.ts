@@ -37,4 +37,9 @@ export class PlantService {
     const url = 'api/thingy_id';
     return this.http.get(url);
   }
+
+  deletePlantById(plantId: string): Observable<any> {
+    const url = "api/plants/" + plantId;
+    return this.http.delete(url);
+  }
 }

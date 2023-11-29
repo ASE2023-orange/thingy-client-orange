@@ -48,6 +48,7 @@
       </select>
     </div>
     <button type="submit" [disabled]="plantForm.invalid">Submit</button><div></div>
+    <div><button type="button" class="delete-button" *ngIf="editMode" (click)="deletePlant()">Delete</button></div>
     <a href="/">Back to list</a>
   </form>
   

@@ -2,20 +2,23 @@
 // Updated by: 
 
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService } from 'keycloak-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
-import { PlantListComponent } from './plant-list/plant-list.component';
-import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { HistoricalDataComponent } from './historical-data/historical-data.component';
 import { PlantAddComponent } from './plant-add/plant-add.component';
 import { PlantFormComponent } from './plant-components/plant-form/plant-form.component';
+import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { PlantListComponent } from './plant-list/plant-list.component';
 import { PlantModifyComponent } from './plant-modify/plant-modify.component';
-import { HistoricalDataComponent } from './historical-data/historical-data.component';
+import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
+
+import { ToastrModule } from 'ngx-toastr';
 
 /**
  * Initializes and returns keycloak configuration
@@ -55,7 +58,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppRoutingModule,
     KeycloakAngularModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     {
