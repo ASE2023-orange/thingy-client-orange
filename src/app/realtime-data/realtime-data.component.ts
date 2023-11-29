@@ -1,9 +1,9 @@
 // Created by: Leyla Kandé on 9 November 2023
-// Updated by: LK on 9.11.2023
+// Updated by: LK on 29.11.2023
 
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
+import { DataService } from '../services/data-service/data.service';
 
 @Component({
   selector: 'app-realtime-data',
@@ -18,7 +18,7 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
 
   subscription: Subscription = new Subscription;
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.fetchThingyData();
@@ -32,12 +32,10 @@ export class RealtimeDataComponent implements OnInit, OnDestroy{
   }
 
   fetchThingyData() {
-    const url = '/api/thingy/' + this.plantThingyID
-    return this.http.get(url, {responseType:'json'})
-    .subscribe((data: any) => {
-      this.thingyData = data;
-      console.log("retrieve thingy data")
-    });
+    this.dataService.getRealtimeData(this.plantThingyID).subscribe(
+      (data) => {
+        this.thingyData = data;
+      }
+    )
   }
-
 }

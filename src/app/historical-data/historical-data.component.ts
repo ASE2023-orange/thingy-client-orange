@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+// Created by: Leyla Kandé on 29 November 2023
+// Updated by: LK on 29.11.2023
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Chart } from 'chart.js/auto';
-import { interval } from 'rxjs';
+import { DataService } from '../services/data-service/data.service';
 
 @Component({
   selector: 'app-historical-data',
@@ -11,83 +13,36 @@ import { interval } from 'rxjs';
 export class HistoricalDataComponent implements OnInit {
   @Input() plantThingyID!: string;
 
-  historyData: any = {};
+  chart!: Chart;
+
   subscription: any;
 
-  public chart: any;
-
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.fetchHistoryData();
-    // TODO: remove this and solve same bug as in realtime data (input is undefined upon init)
-    this.subscription = interval(3000).subscribe(() => {
-      this.fetchHistoryData();
-      this.createChart()
-    })
-    
   }
 
-  fetchHistoryData() {
-    const url = '/api/influx/' + this.plantThingyID;
-    return this.http.get(url, {responseType: 'json'})
-    .subscribe((data: any) => {
-      this.historyData = data;
-      console.log("retrieve history data")
-    });
+  fetchHistoryData() {  
+    this.dataService.getHistoricalData(this.plantThingyID).subscribe(
+      (data) => {
+        this.createChart(data);
+        console.log("Retrieve history data", data);
+      }
+    );
   }
 
-  createChart() {
-    //const ctx = document.getElementById('historyChart') as HTMLCanvasElement;
-    this.chart = new Chart('historyChart', {
-      type: 'line',
+  createChart(historicalData: any) {
+    this.chart = new Chart("historyChart", {
+      type: "line",
       data: {
-        labels: [], //this.formatTimestamps(),
-        datasets:  [
-          { label: "", data: [''],},
-          { label: "", data: [''],}]
-          //this.historyData.dataset, //this.getDataSets()
-        },
-      // options: {
-      //   scales: {
-      //     x: {
-      //         type: 'time',
-      //         time: {
-      //           unit: 'minute',
-      //         },
-      //         title: {
-      //         display: true,
-      //         text: ["Time [10 min]"]
-      //       },
-      //       },
-      //     y: {
-      //       title: {
-      //         display: true,
-      //         text: ["Measures"]
-      //       },
-      //     } 
-      //   },
-      // },
-  });
-  }
-
-  formatTimestamps(): string[] {
-    // Format timestamps into readable dates
-    return this.historyData.timestamps.map((timestamp: number) => {
-      const date = new Date(timestamp * 1000); // Convert timestamp to milliseconds
-      return date.toLocaleTimeString();
+        labels: historicalData.labels,
+        datasets: historicalData.datasets,
+      },
+      options: {}
     });
-  }
-
-  getDataSets() {
-    return this.historyData.datasets.map((dataset: { label: any; data: any; borderColor: any; fill: any; }) => {
-      return {
-        label: dataset.label,
-        data: dataset.data,
-        borderColor: dataset.borderColor,
-        fill: dataset.fill
-      };
-    });
+    this.chart.update();
+    console.count("update")
   }
 }
 
