@@ -2,3 +2,35 @@
 Created by: Leyla Kandé on 9 November 2023
 Updated by:  
 */
+
+/* Add general styles for the component container */
+:host {
+    display: block;
+    margin: 20px;
+}
+
+/* Add styles for the plant information */
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Add styles for the realtime-data and historical-data components */
+.app-data-components {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Add styles for the loading spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}

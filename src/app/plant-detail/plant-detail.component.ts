@@ -1,7 +1,6 @@
 // Created by: Leyla Kandé on 9 November 2023
 // Updated by: LK on 29.11.2023
 
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlantService } from '../plant.service';

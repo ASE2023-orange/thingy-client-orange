@@ -37,12 +37,25 @@ export class HistoricalDataComponent implements OnInit {
       type: "line",
       data: {
         labels: historicalData.labels,
-        datasets: historicalData.datasets,
+        datasets: historicalData.datasets.map((dataSet: any, index: any) => {
+          return {
+            ...dataSet,
+            yAxisID: `y-axis-${index}`, // Assign unique y-axis ID for each dataset
+          }
+        }),
       },
-      options: {}
+      options: {
+        scales: {       
+          y: historicalData.datasets.map((dataSet: any, index: any) => {
+            return {
+              id: `y-axis-${index}`,
+              type: 'linear',
+              position:'left',
+            }
+          })
+        }
+      }
     });
-    this.chart.update();
-    console.count("update")
   }
 }
 
