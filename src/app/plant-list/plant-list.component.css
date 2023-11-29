@@ -1,9 +1,52 @@
 /* 
 Created by: Leyla Kandé on 9 November 2023
-Updated by:  
+Updated by:  JMA on 29 November 2023
 */
-.add-button {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
-}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  td {
+    cursor: pointer;
+  }
+  
+  .edit-button, .add-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  
+  .edit-button:hover, .add-button:hover {
+    background-color: #00506b;
+  }

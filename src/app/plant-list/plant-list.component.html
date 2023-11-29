@@ -1,6 +1,6 @@
 <!-- 
     Created by: Leyla Kandé on 9 November 2023
-    Updated by: LK on 27 November 2023
+    Updated by: JMA on 29 November 2023
 -->
 
 <h1>Solar plant monitoring solution</h1>
@@ -12,16 +12,18 @@
       <th>Locality</th>
       <th>Max Power</th>
       <th># Panels</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let plant of plantList">
       <td (click)="navigateToDetail(plant.id)" style="cursor: pointer">{{ plant.friendly_name }}</td>
-      <td>{{ plant.locality }}</td>
-      <td>{{ plant.max_power }}</td>
-      <td>{{ plant.nr_panels }}</td>
+      <td (click)="navigateToDetail(plant.id)">{{ plant.locality }}</td>
+      <td (click)="navigateToDetail(plant.id)">{{ plant.max_power }}</td>
+      <td (click)="navigateToDetail(plant.id)">{{ plant.nr_panels }}</td>
+      <td><a class="edit-button" [href]="'plant/manage/'+ plant.id">Edit</a></td>
     </tr>
   </tbody>
 </table>
 
-<button><a class="add-button" href="plant/add">Add Plant</a></button>
+<a class="add-button" href="plant/add">Add Plant</a>

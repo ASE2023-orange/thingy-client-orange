@@ -1,3 +1,8 @@
+<!-- 
+    Created by: Leyla Kandé on 9 November 2023
+    Updated by: JMA on 29 November 2023
+-->
+
 <!-- plant-form.component.html -->
 <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
     <div>
@@ -42,6 +47,7 @@
           [value]="thingyId" [selected]="plantData.thingy_id && thingyId === plantData.thingy_id">{{ thingyId }}</option>
       </select>
     </div>
-    <button type="submit" [disabled]="plantForm.invalid">Submit</button>
+    <button type="submit" [disabled]="plantForm.invalid">Submit</button><div></div>
+    <a href="/">Back to list</a>
   </form>
   
