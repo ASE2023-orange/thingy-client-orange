@@ -1,0 +1,20 @@
+/* plant-info.component.css */
+
+.plant-info {
+    border: 1px solid #ddd; /* Add border around the whole component */
+    padding: 20px; /* Add some padding for spacing */
+    margin: 20px; /* Add margin for spacing */
+    display: inline-block; /* Make the div size dynamically based on content */
+  }
+  
+  h2 {
+    color: #3498db; /* Change heading color to a blue shade */
+  }
+  
+  .info-container {
+    margin-top: 10px; /* Add margin above the information container */
+  }
+  
+  p {
+    margin-bottom: 8px; /* Add margin below each paragraph for spacing */
+  }
