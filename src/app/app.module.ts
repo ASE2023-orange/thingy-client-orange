@@ -51,7 +51,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     PlantAddComponent,
     PlantFormComponent,
     PlantModifyComponent,
-    HistoricalDataComponent
+    HistoricalDataComponent,
     PlantInfoComponent,
   ],
   imports: [
