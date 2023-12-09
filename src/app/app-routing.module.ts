@@ -7,6 +7,7 @@ import { PlantDetailComponent } from './plant-detail/plant-detail.component';
 import { PlantListComponent } from './plant-list/plant-list.component';
 import { PlantAddComponent } from './plant-add/plant-add.component';
 import { PlantModifyComponent } from './plant-modify/plant-modify.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   { path: '', component: PlantListComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'plant/detail/:id', component: PlantDetailComponent},
   { path: 'plant/add', component: PlantAddComponent},
   { path: 'plant/manage/:id', component: PlantModifyComponent},
+  { path: 'map', component: MapComponent },
 ];
 
 @NgModule({

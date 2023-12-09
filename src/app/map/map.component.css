@@ -1,0 +1,10 @@
+#map {
+  height: 98vh; /* Use 100% of the viewport height */
+  width: 100%;   /* Use 100% of the container width */
+}
+
+
+
+.leaflet-popup-content-wrapper {
+  text-align: center;
+}
