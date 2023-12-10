@@ -21,6 +21,7 @@ import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
 import { ToastrModule } from 'ngx-toastr';
 import { PlantInfoComponent } from './plant-info/plant-info.component';
 import { MapComponent } from './map/map.component';
+import { HeaderComponent } from './header/header.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -56,6 +57,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     HistoricalDataComponent,
     PlantInfoComponent,
     MapComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
