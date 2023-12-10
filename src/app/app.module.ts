@@ -1,8 +1,8 @@
 // Created by: Jean-Marie Alder on 9 November 2023
-// Updated by: 
+// Updated by: JMA on 10.12.23
 
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -55,7 +55,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     PlantModifyComponent,
     HistoricalDataComponent,
     PlantInfoComponent,
-    MapComponent
+    MapComponent,
   ],
   imports: [
     BrowserModule,

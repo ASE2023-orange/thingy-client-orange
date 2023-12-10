@@ -32,6 +32,11 @@ export class PlantService {
     return this.http.get(url)
   }
 
+  getAllPlantsMap(): Observable<any> {
+    const url = 'api/map/plants';
+    return this.http.get(url)
+  }
+
   updatePlant(formData: any, plantId: string): Observable<any> {
     const url = 'api/plants/' + plantId;
     return this.http.patch(url, formData)
