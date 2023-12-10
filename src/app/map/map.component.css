@@ -1,0 +1,13 @@
+#map-container {
+  height: calc(96.5vh - 2rem); /* 2rem is an example header height; adjust as needed */
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+  text-align: center;
+}

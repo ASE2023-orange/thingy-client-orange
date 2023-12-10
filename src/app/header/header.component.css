@@ -1,0 +1,29 @@
+/* header.component.css */
+header {
+    background: linear-gradient(to right, lightblue, white);
+    padding: 1rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    height: 1.5vh;
+
+  }
+  
+  .title {
+    margin-right: 1rem;
+    font-size: 1.5rem; /* Set a larger font size for the title */
+    font-weight: bold; /* Optionally, make the title bold */
+    color: black;
+    text-decoration: none; /* Remove the default underline for links */
+  }
+  
+  nav {
+    display: flex;
+    gap: 2rem; /* Increase the gap between navigation links */
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+  }
+  

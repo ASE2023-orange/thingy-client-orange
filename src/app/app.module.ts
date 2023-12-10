@@ -1,8 +1,8 @@
 // Created by: Jean-Marie Alder on 9 November 2023
-// Updated by: 
+// Updated by: JMA on 10.12.23
 
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -19,6 +19,9 @@ import { PlantModifyComponent } from './plant-modify/plant-modify.component';
 import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { PlantInfoComponent } from './plant-info/plant-info.component';
+import { MapComponent } from './map/map.component';
+import { HeaderComponent } from './header/header.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -51,7 +54,10 @@ function initializeKeycloak(keycloak: KeycloakService) {
     PlantAddComponent,
     PlantFormComponent,
     PlantModifyComponent,
-    HistoricalDataComponent
+    HistoricalDataComponent,
+    PlantInfoComponent,
+    MapComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

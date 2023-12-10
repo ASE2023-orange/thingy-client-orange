@@ -3,6 +3,9 @@
     Updated by: Leyla Kandé on 29 November 2023
 -->
 <h1>{{ plantData.friendly_name }}</h1>
+<div class="plant-detail-content">
+    <app-plant-info *ngIf="isDataLoaded" [plantData]="plantData"></app-plant-info>
+    <app-realtime-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"> </app-realtime-data>
+    <app-historical-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-historical-data>
+</div>
 
-<app-realtime-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"> </app-realtime-data>
-<app-historical-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-historical-data>

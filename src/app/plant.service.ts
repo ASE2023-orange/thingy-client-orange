@@ -27,6 +27,15 @@ export class PlantService {
     const url = 'api/plants/' + plantId;
     return this.http.get(url);
   }
+  getAllPlants(): Observable<any> {
+    const url = 'api/plants';
+    return this.http.get(url)
+  }
+
+  getAllPlantsMap(): Observable<any> {
+    const url = 'api/map/plants';
+    return this.http.get(url)
+  }
 
   updatePlant(formData: any, plantId: string): Observable<any> {
     const url = 'api/plants/' + plantId;

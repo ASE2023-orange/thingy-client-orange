@@ -1,13 +1,16 @@
-<div class="chart-controls">
-    <div class="btn-group">
-        <button class="btn" (click)="setTimeRange('30d')" [class.active]="selectedTimeRange === '30d'">1 Month</button>
-        <button class="btn" (click)="setTimeRange('15d')" [class.active]="selectedTimeRange === '15d'">15 Days</button>
-        <button class="btn" (click)="setTimeRange('7d')" [class.active]="selectedTimeRange === '7d'">7 Days</button>
-        <button class="btn" (click)="setTimeRange('1d')" [class.active]="selectedTimeRange === '1d'">24 Hours</button>
-        <button class="btn" (click)="setTimeRange('1h')" [class.active]="selectedTimeRange === '1h'">1 Hour</button>
-      </div>
-      <div class="loading-label" *ngIf="isLoading">Loading...</div>
-</div>
-<div>
-    <canvas id="historyChart" ></canvas>
+<div class="chart-content">
+    <div class="chart-controls">
+        <div class="btn-group">
+            <button class="btn" (click)="setTimeRange('30d')" [class.active]="selectedTimeRange === '30d'">1 Month</button>
+            <button class="btn" (click)="setTimeRange('15d')" [class.active]="selectedTimeRange === '15d'">15 Days</button>
+            <button class="btn" (click)="setTimeRange('7d')" [class.active]="selectedTimeRange === '7d'">7 Days</button>
+            <button class="btn" (click)="setTimeRange('1d')" [class.active]="selectedTimeRange === '1d'">24 Hours</button>
+            <button class="btn" (click)="setTimeRange('1h')" [class.active]="selectedTimeRange === '1h'">1 Hour</button>
+        </div>
+        <div class="loading-label" *ngIf="isLoading">Loading...</div>
+    </div>
+    <div>
+        <canvas id="historyChart" ></canvas>
+    </div>
+
 </div>
