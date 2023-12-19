@@ -17,7 +17,7 @@ export class PlantWeatherInfoComponent implements OnInit{
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.fetchWeatherData()
+    this.fetchWeatherData();
   }
 
   fetchWeatherData() {
