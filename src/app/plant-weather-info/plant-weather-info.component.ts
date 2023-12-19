@@ -31,9 +31,17 @@ export class PlantWeatherInfoComponent implements OnInit{
   }
 
   getCloudCoverColor(percentage: number): string {
-    // Implement your logic to determine the color based on the percentage
-    // For simplicity, I'll use a basic example:
-    return percentage > 50 ? 'red' : 'green';
+    if (percentage < 20) {
+        return '#00FF00';
+    } else if (percentage < 40) {
+        return '#7FFF00';
+    } else if (percentage < 60) {
+        return '#FFFF00';
+    } else if (percentage < 80) {
+        return '#FFA500';
+    } else {
+        return '#FF0000';
+    }
   }
 
 }
