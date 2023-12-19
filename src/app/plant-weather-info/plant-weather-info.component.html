@@ -1,0 +1,12 @@
+<div class="weather-card" *ngIf="isLoaded">
+    <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ weatherData.weather[0].icon }}@2x.png" alt="Weather Icon">
+    <div class="weather-details">
+        <div class="weather-description">{{ weatherData.weather[0].description }}</div>
+        <div class="temperature">{{ weatherData.main.temp }}°C</div>
+        <div class="cloud-cover">
+            <span class="label">Cloud Cover: </span>
+            <span class="value">{{ weatherData.clouds.all }}%</span>
+            <span class="dot" [style.background-color]="getCloudCoverColor(weatherData.clouds.all)"></span>
+        </div>
+    </div>
+</div>
