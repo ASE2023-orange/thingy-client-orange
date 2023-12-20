@@ -1,5 +1,5 @@
 // Created by: Leyla Kandé on 9 November 2023
-// Updated by: LK on 27.11.2023
+// Updated by: JMA on 20.12.2023
 
 // Component for listing all plants 
 
@@ -14,26 +14,15 @@ import { Router } from '@angular/router';
 })
 export class PlantListComponent implements OnInit{
 
-  plantList: any = {};
+  plantList: any = [];
 
   constructor(private http: HttpClient, private router: Router) {}
   
   ngOnInit(): void {
     this.fetchPlantList();
     if(JSON.stringify(this.plantList) === JSON.stringify([])) {
-      this.createPlants();
       this.fetchPlantList();
     }
-  }
-
-  //TODO: remove once DB persists
-  createPlants() {
-    const url = '/api/plants/create/dev';
-    return this.http.get(url, {responseType: 'json'})
-    .subscribe((data: any) => {
-      this.plantList = data;
-      console.log("retrieve plant list")
-    });
   }
 
   fetchPlantList() {
