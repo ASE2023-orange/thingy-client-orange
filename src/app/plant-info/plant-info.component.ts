@@ -6,9 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./plant-info.component.css']
 })
 export class PlantInfoComponent {
-
   @Input() plantData: any;
-
-  
-
 }

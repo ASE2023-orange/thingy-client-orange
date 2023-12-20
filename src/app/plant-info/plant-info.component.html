@@ -1,12 +1,10 @@
 <div class="plant-info">
-    <div class="info-container">
-      <p><strong>ID:</strong> {{ plantData.id }}</p>
-      <p><strong>Name:</strong> {{ plantData.friendly_name }}</p>
-      <p><strong>Thingy ID:</strong> {{ plantData.thingy_id }}</p>
-      <p><strong>Locality:</strong> {{ plantData.npa + " " + plantData.locality }}</p>
-      <p><strong>Max Power:</strong> {{ plantData.max_power }} kW</p>
-      <p><strong>N° Panels:</strong> {{ plantData.nr_panels }}</p>
-      <p><strong>Maintainer:</strong> {{ plantData.contact_person.first_name }} {{ plantData.contact_person.last_name }}</p>
-      <p><strong>Maintainer email:</strong> {{ plantData.contact_person.email }}</p>
-    </div>
-  </div>
+  <p><strong>ID:</strong> {{ plantData.id }}</p>
+  <p><strong>Name:</strong> {{ plantData.friendly_name }}</p>
+  <p><strong>Thingy ID:</strong> {{ plantData.thingy_id }}</p>
+  <p><strong>Locality:</strong> {{ plantData.npa + " " + plantData.locality }}</p>
+  <p><strong>Max Power:</strong> {{ plantData.max_power }} kW</p>
+  <p><strong>N° Panels:</strong> {{ plantData.nr_panels }}</p>
+  <p><strong>Maintainer:</strong> {{ plantData.contact_person.first_name }} {{ plantData.contact_person.last_name }}</p>
+  <p><strong>Maintainer email:</strong> {{ plantData.contact_person.email }}</p>
+</div>

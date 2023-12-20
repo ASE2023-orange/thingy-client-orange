@@ -6,13 +6,9 @@
 <app-maintenance-mode *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-maintenance-mode>
 <div class="plant-detail-content">
     <div class="info-container">
-        <div class="plant-info-wrapper">
-            <app-plant-info *ngIf="isDataLoaded" [plantData]="plantData"></app-plant-info>
-        </div>
-        <div class="weather-info-wrapper">
-            <app-plant-weather-info *ngIf="isDataLoaded" [plantId]="plantData.id"></app-plant-weather-info>
-        </div>
+        <app-plant-info class="info-wrapper" *ngIf="isDataLoaded" [plantData]="plantData"></app-plant-info>
+        <app-plant-weather-info class="info-wrapper" *ngIf="isDataLoaded" [plantId]="plantData.id"></app-plant-weather-info>
+        <app-realtime-data class="info-wrapper" *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"> </app-realtime-data>
     </div>
-    <app-realtime-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"> </app-realtime-data>
     <app-historical-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-historical-data>
 </div>

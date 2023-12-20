@@ -4,11 +4,10 @@
 -->
 <div class="realtime-container">
     <h3>Sensor: {{ plantThingyID }}</h3>
-
     <ul>
-        <li>Humidity: {{ thingyData[plantThingyID]?.humidity || '' }}</li>
-        <li>Pressure: {{ thingyData[plantThingyID]?.pressure || '' }}</li>
-        <li>Light: {{ thingyData[plantThingyID]?.light || '' }}</li>
+        <p><strong>Humidity:</strong> {{ thingyData[plantThingyID]?.humidity || '' }}</p>
+        <p><strong>Pressure:</strong> {{ thingyData[plantThingyID]?.pressure || '' }}</p>
+        <p><strong>Light:</strong> {{ thingyData[plantThingyID]?.light || '' }}</p>
     </ul>
 </div>
 

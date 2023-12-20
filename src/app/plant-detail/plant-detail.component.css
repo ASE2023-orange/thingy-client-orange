@@ -3,12 +3,6 @@ Created by: Leyla Kandé on 9 November 2023
 Updated by:  
 */
 
-/* Add general styles for the component container */
-:host {
-    display: block;
-    margin: 20px;
-}
-
 /* Add styles for the plant information */
 h1 {
     font-size: 2em;
@@ -22,7 +16,7 @@ h2 {
 
 /* Add styles for the realtime-data and historical-data components */
 .app-data-components {
-    display: flex;
+    display: inline-block;    
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -30,10 +24,16 @@ h2 {
 .info-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
-.plant-info-wrapper,
-.weather-info-wrapper {
+.info-wrapper {
     flex: 1;
     margin-right: 10px; /* Adjust margin as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+    display: inline-block;
 }
