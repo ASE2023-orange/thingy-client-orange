@@ -22,8 +22,8 @@ export class DataService {
       return this.http.get(url, {responseType: 'json'})
   }
 
-  getMaintenanceStatus(plantID: string) : Observable<any> {
-    const url = '/api/plants/maintenance/' + plantID;
+  getMaintenanceStatus(thingyID: string) : Observable<any> {
+    const url = '/api/maintenance/status/' + thingyID;
       return this.http.get(url, {responseType: 'json'})
   }
 }

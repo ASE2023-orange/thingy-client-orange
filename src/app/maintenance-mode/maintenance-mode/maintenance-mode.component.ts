@@ -16,10 +16,10 @@ import { DataService } from 'src/app/services/data-service/data.service';
   ]
 })
 export class MaintenanceModeComponent implements OnInit, OnDestroy {
-  @Input() plantID!: string;
+  @Input() plantThingyID!: string;
 
   Object = Object;
-  maintenanceStatus: any = {};
+  maintenanceStatus = false; 
   
   subscription: Subscription = new Subscription;
 
@@ -37,9 +37,9 @@ export class MaintenanceModeComponent implements OnInit, OnDestroy {
   }
 
   fetchMaintenanceStatus() {
-    this.dataService.getMaintenanceStatus(this.plantID).subscribe(
-      (data: { in_maintenance: boolean }) => {
-        this.maintenanceStatus = data.in_maintenance
+    this.dataService.getMaintenanceStatus(this.plantThingyID).subscribe(
+      (data: { maintenance_status: boolean }) => {
+        this.maintenanceStatus = data.maintenance_status
       }
     )
   }
