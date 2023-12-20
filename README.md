@@ -1,5 +1,19 @@
 # ThingyClientOrange
 
+This project is part of the "Advanced Software Engineering" Master lecture at University of Fribourg. It features a simple angular client to consume thingyorange API ressources, a monitoring solution for distributed solar power plants.
+
+## Quick starting guide for development
+
+- Make sure to have node installed on your system. Install dependencies using :
+```npm install```
+- To run the application:
+```ng serve --open```
+
+## Production setup
+Production setup is available on the api github readme page. After cloning the repository, and adapting and using the docker-compose file, the app should build and be served using nginx.
+
+# Angular readme:
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Development server
