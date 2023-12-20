@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PlantInfoComponent } from './plant-info/plant-info.component';
 import { MapComponent } from './map/map.component';
 import { HeaderComponent } from './header/header.component';
+import { MaintenanceModeComponent } from './maintenance-mode/maintenance-mode/maintenance-mode.component';
 
 /**
  * Initializes and returns keycloak configuration
@@ -58,6 +59,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     PlantInfoComponent,
     MapComponent,
     HeaderComponent,
+    MaintenanceModeComponent,
   ],
   imports: [
     BrowserModule,

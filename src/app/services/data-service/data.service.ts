@@ -21,4 +21,9 @@ export class DataService {
     const url = '/api/influx/' + thingyID + "/" + timeRange;
       return this.http.get(url, {responseType: 'json'})
   }
+
+  getMaintenanceStatus(plantID: string) : Observable<any> {
+    const url = '/api/plants/maintenance/' + plantID;
+      return this.http.get(url, {responseType: 'json'})
+  }
 }
