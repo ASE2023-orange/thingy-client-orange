@@ -27,10 +27,13 @@ h2 {
     gap: 20px;
 }
 
-/* Add styles for the loading spinner */
-.loading-spinner {
+.info-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+    flex-wrap: wrap;
+}
+
+.plant-info-wrapper,
+.weather-info-wrapper {
+    flex: 1;
+    margin-right: 10px; /* Adjust margin as needed */
 }

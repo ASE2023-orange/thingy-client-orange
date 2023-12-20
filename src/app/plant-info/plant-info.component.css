@@ -1,8 +1,9 @@
 /* plant-info.component.css */
 
 .plant-info {
-    border: 1px solid #ddd; /* Add border around the whole component */
-    padding: 20px; /* Add some padding for spacing */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
     margin: 20px; /* Add margin for spacing */
     display: inline-block; /* Make the div size dynamically based on content */
   }

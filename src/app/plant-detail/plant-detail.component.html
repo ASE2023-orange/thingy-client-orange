@@ -1,12 +1,18 @@
 <!-- 
     Created by: Leyla Kandé on 9 November 2023
-    Updated by: Leyla Kandé on 29 November 2023
+    Updated by: JMA on 19 Dec 2023
 -->
 <h1>{{ plantData.friendly_name }}</h1>
+<app-maintenance-mode *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-maintenance-mode>
 <div class="plant-detail-content">
-    <app-maintenance-mode  *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-maintenance-mode>
-    <app-plant-info *ngIf="isDataLoaded" [plantData]="plantData"></app-plant-info>
+    <div class="info-container">
+        <div class="plant-info-wrapper">
+            <app-plant-info *ngIf="isDataLoaded" [plantData]="plantData"></app-plant-info>
+        </div>
+        <div class="weather-info-wrapper">
+            <app-plant-weather-info *ngIf="isDataLoaded" [plantId]="plantData.id"></app-plant-weather-info>
+        </div>
+    </div>
     <app-realtime-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"> </app-realtime-data>
     <app-historical-data *ngIf="isDataLoaded" [plantThingyID]="plantData.thingy_id"></app-historical-data>
 </div>
-
