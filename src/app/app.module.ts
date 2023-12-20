@@ -10,20 +10,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService } from 'keycloak-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HistoricalDataComponent } from './historical-data/historical-data.component';
-import { PlantAddComponent } from './plant-add/plant-add.component';
-import { PlantFormComponent } from './plant-components/plant-form/plant-form.component';
-import { PlantDetailComponent } from './plant-detail/plant-detail.component';
-import { PlantListComponent } from './plant-list/plant-list.component';
-import { PlantModifyComponent } from './plant-modify/plant-modify.component';
-import { RealtimeDataComponent } from './realtime-data/realtime-data.component';
+import { HistoricalDataComponent } from './components/historical-data/historical-data.component';
+import { PlantAddComponent } from './components/plant-add/plant-add.component';
+import { PlantFormComponent } from './components/plant-components/plant-form/plant-form.component';
+import { PlantDetailComponent } from './components/plant-detail/plant-detail.component';
+import { PlantListComponent } from './components/plant-list/plant-list.component';
+import { PlantModifyComponent } from './components/plant-modify/plant-modify.component';
+import { RealtimeDataComponent } from './components/realtime-data/realtime-data.component';
 
 import { ToastrModule } from 'ngx-toastr';
-import { PlantInfoComponent } from './plant-info/plant-info.component';
-import { MapComponent } from './map/map.component';
-import { HeaderComponent } from './header/header.component';
-import { PlantWeatherInfoComponent } from './plant-weather-info/plant-weather-info.component';
-import { MaintenanceModeComponent } from './maintenance-mode/maintenance-mode/maintenance-mode.component';
+import { PlantInfoComponent } from './components/plant-info/plant-info.component';
+import { MapComponent } from './components/map/map.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PlantWeatherInfoComponent } from './components/plant-weather-info/plant-weather-info.component';
+import { MaintenanceModeComponent } from './components/maintenance-mode/maintenance-mode/maintenance-mode.component';
 
 /**
  * Initializes and returns keycloak configuration

@@ -1,3 +1,7 @@
+// Created by: LK on 19.12.23
+
+// Component for warning banner when plant is in maintenance mode (button click)
+
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval } from 'rxjs';

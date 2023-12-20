@@ -1,9 +1,11 @@
 // Created by: Leyla Kandé on 29 November 2023
 // Updated by: JMA on 6.12.23
 
+// Component for showcasing historical sensor data in graph
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Chart, ChartItem } from 'chart.js/auto';
-import { DataService } from '../services/data-service/data.service';
+import { DataService } from '../../services/data-service/data.service';
 
 @Component({
   selector: 'app-historical-data',

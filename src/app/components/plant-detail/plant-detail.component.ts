@@ -1,9 +1,11 @@
 // Created by: Leyla Kandé on 9 November 2023
 // Updated by: LK on 29.11.2023
 
+// Component to showcase all detail views associated with a plant 
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlantService } from '../plant.service';
+import { PlantService } from '../../services/plant-service/plant.service';
 
 @Component({
   selector: 'app-plant-detail',

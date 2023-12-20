@@ -1,6 +1,8 @@
 // Created by: Jean-Marie Alder on 12 November 2023
 // Updated by:
 
+// Service for plant actions from API
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

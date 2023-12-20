@@ -1,9 +1,11 @@
 // Created by: Leyla Kandé on 9 November 2023
 // Updated by: LK on 29.11.2023
 
+// Component to showcase realtime sensor data from given thingy
+
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
-import { DataService } from '../services/data-service/data.service';
+import { DataService } from '../../services/data-service/data.service';
 
 @Component({
   selector: 'app-realtime-data',

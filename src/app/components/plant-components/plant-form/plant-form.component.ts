@@ -1,11 +1,13 @@
 // Created by: Jean-Marie Alder on 12 November 2023
 // Updated by:
 
+// Component to allow plant actions in angular forms
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { PlantService } from '../../plant.service';
+import { PlantService } from '../../../services/plant-service/plant.service';
 
 @Component({
   selector: 'app-plant-form',

@@ -1,6 +1,8 @@
 // Created by: Leyla Kandé on 9 November 2023
 // Updated by: LK on 27.11.2023
 
+// Component for listing all plants 
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

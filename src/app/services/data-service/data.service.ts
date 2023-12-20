@@ -1,6 +1,8 @@
 // Created by: Leyla Kandé on 29 November 2023
 // Updated by: JMA on 19.12.2023
 
+// Service to access data from API
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

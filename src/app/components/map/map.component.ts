@@ -1,9 +1,11 @@
 // Created by: JMA on 8.12.23
 // Updated by: JMA on 10.12.23
 
+// component to allow plant selection from map display
+
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { PlantService } from '../plant.service';
+import { PlantService } from '../../services/plant-service/plant.service';
 import { Router } from '@angular/router';
 
 @Component({

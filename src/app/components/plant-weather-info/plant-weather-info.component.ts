@@ -1,7 +1,9 @@
 //Created by JMA on 19.12.23
 
+// Component to showcase weather info from weather API for given plant
+
 import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from '../services/data-service/data.service';
+import { DataService } from '../../services/data-service/data.service';
 
 @Component({
   selector: 'app-plant-weather-info',

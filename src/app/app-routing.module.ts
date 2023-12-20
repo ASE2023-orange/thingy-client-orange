@@ -3,11 +3,11 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PlantDetailComponent } from './plant-detail/plant-detail.component';
-import { PlantListComponent } from './plant-list/plant-list.component';
-import { PlantAddComponent } from './plant-add/plant-add.component';
-import { PlantModifyComponent } from './plant-modify/plant-modify.component';
-import { MapComponent } from './map/map.component';
+import { PlantDetailComponent } from './components/plant-detail/plant-detail.component';
+import { PlantListComponent } from './components/plant-list/plant-list.component';
+import { PlantAddComponent } from './components/plant-add/plant-add.component';
+import { PlantModifyComponent } from './components/plant-modify/plant-modify.component';
+import { MapComponent } from './components/map/map.component';
 
 const routes: Routes = [
   { path: '', component: PlantListComponent },

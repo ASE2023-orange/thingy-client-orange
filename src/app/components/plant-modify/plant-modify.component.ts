@@ -1,6 +1,8 @@
 // Created by: Jean-Marie Alder on 12 November 2023
 // Updated by: 
 
+// Component to modify plant info
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
